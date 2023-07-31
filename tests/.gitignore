@@ -1,3 +1,4 @@
-test_sieve_compare
 test_sieve_compiletime
 test_sieve_runtime
+test_sieve
+

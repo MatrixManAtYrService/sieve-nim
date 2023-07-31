@@ -13,15 +13,24 @@
       pkgs = import nixpkgs {
         inherit system;
       };
-
-    in {
-        devShells.default = with pkgs; mkShell {
-          packages = [
-            nim
-            python311
-            python311Packages.black
-            ruff
-          ];
+    in
+    {
+      packages = rec {
+        sieve = pkgs.nimPackages.buildNimPackage {
+          pname = "sieve";
+          version = "0.1.0";
+          src = ./.;
         };
+        default = sieve;
+      };
+
+      devShells.default = with pkgs; mkShell {
+        packages = [
+          nim
+          python311
+          python311Packages.black
+          ruff
+        ];
+      };
     });
 }
