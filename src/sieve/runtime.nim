@@ -1,5 +1,6 @@
 from math import sqrt, ceil
 from sequtils import newSeqWith
+import contracts
 
 proc greatestPrimeLessThan*(n: int): int =
   var sieve = newSeqWith(n, true)
