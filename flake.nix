@@ -38,7 +38,7 @@
           pname = "sieve";
           version = "0.1.0";
           src = ./.;
-          buildInputs = [ contracts ];
+          propagatedBuildInputs = [ contracts ];
         };
         default = sieve;
       };
@@ -49,6 +49,7 @@
           python311
           python311Packages.black
           ruff
+          contracts
         ];
       };
     });
